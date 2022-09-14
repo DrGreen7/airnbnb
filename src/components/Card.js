@@ -1,20 +1,19 @@
-import Profile from "../images/profile1.jpg";
-function Card() {
+function Card(props) {
   return (
     <div className="card">
       <div>
-        <img src={Profile} />
+        <img src={props.img} />
       </div>
       <div className="status">
         <i class="fa-solid fa-star"></i>
-        <span>5.0</span>
-        <span className="gray">(6)</span>
+        <span>{props.rating}</span>
+        <span className="gray">({props.reviewCount})</span>
         <span className="gray">&#8226;</span>
-        <span className="gray">USA</span>
+        <span className="gray">{props.country}</span>
       </div>
-      <p>Life Lessons with OJ Simpsons</p>
+      <p>{props.title}</p>
       <p>
-        <span className="bold"> From $136</span> / person
+        <span className="bold"> From ${props.price}</span> / person
       </p>
     </div>
   );
